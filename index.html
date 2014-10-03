@@ -1,0 +1,590 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>AngularJs Overview</title>
+
+  <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+  <meta name="author" content="Bartek Szopka" />
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+
+  <link href="css/impress-demo.css" rel="stylesheet" />
+  <link href="js/google-code-prettify/prettify.css" rel="stylesheet" />
+  <link href="js/google-code-prettify/dessert.css" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+  <body class="impress-not-supported">
+
+    <div class="fallback-message">
+      <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+      <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+  <div id="impress">
+
+      <div id="cover" class="step slide">
+        <h1 class="logo"><img src="images/angular-js-logo.png" alt="AngularJs"></h1>
+      </div>
+
+      <div class="step" data-y="-1000" data-x="1000">
+        <h1><i class="ion-help-circled"></i> Quem sou eu?</h1>
+      </div>
+
+      <div class="step slide about" data-y="-1000" data-x="2000">
+        <h1>Vinicius Souza</h1>
+        <div class="description">
+          <p>Desenvolvedor Front-end</p>
+        </div>
+        <hr>
+        <small>Social:</small>
+        <p><i class="ion-social-github"></i> Github <a href="github.com/infodark">@infodark</a></p>
+        <p><i class="ion-social-rss"></i> Blog <a href="blog.infodark.co">blog.infodark.co</a></p>
+      </div>
+
+      <div class="step" data-x="1000">
+        <h1><i class="ion-information-circled"></i> Introdução</h1>
+      </div>
+
+      <div class="step slide text-center" data-x="2000">
+        <h1>Buscas feitas por frameworks Javascript</h1>
+        <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=Knockout+JS,+Ember.js,+Backbone.js,+Kendo+UI,+AngularJS&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=800&h=390"></script>
+        <img src="images/basterds_aniquilation.gif" alt="">
+      </div>
+
+      <div class="step slide text-center" data-x="3000">
+        <h1>Curva de Aprendizado</h1>
+        <p><img class="img-block" src="images/curvaAngular.jpg" alt=""></p>
+        <img src="images/shoshana.gif" alt="">
+      </div>
+
+      <div class="step slide" data-x="4000">
+        <h1>Tópicos Abordados:</h1>
+        <ul class="list">
+          <li><p>Single page applications (SPA)</p></li>
+          <li><p>Client-side MVC patterns</p></li>
+          <li><p>Two way data-binding</p></li>
+          <li><p>Routing templates</p></li>
+          <li><p>AngularJS building blocks: <strong>Directives, Factories, &amp; Controllers</strong></p></li>
+        </ul>
+      </div>
+
+
+      <div class="step slide" data-x="5000">
+        <h1>Tradicional Full Postback</h1>
+        <p><img class="img-block" src="images/spa01.png" alt=""></p>
+      </div>
+
+      <div class="step slide" data-x="6000">
+        <h1>Single Page Application</h1>
+        <p>
+          <img class="img-block" src="images/spa02.png" alt="">
+        </p>
+      </div>
+
+      <div class="step" data-x="7000">
+        <h1><i class="ion-social-buffer"></i> MVC</h1>
+      </div>
+
+      <div class="step" data-x="8000">
+        <p><i class="ion-social-buffer"></i> MV* <strong>(Model-View-Whatever)</strong></p>
+        <small>**Whatever works for you</small>
+      </div>
+
+      <div class="step" data-x="9000">
+        <h1>SHOW ME THE CODE!</h1>
+        <img src="images/shi.gif" style="width: 100%;" alt="">
+      </div>
+
+      <div class="step" data-x="10000">
+        <h1>Começando com o Angular</h1>
+        <xmp class="prettyprint" id="htmlXmp">
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Getting Started Angular</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Yours first model in Angular.js :) -->
+  <div class="form-group">
+    <input type="text"
+           class="form-control"
+           ng-model="myName"
+           placeholder="Tell me your name...">
+  </div>
+
+
+  <!-- The powerful of Two Way data binding -->
+  <h1>Hello, <strong>{{myName}}</strong></h1>
+
+  <script src="bower_components/angular/angular.min.js"></script>
+
+</body>
+</html>
+        </xmp>
+      </div>
+
+      <div class="step slide" data-x="11000">
+        <iframe src="http://localhost:9000/#/examples/01" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+
+      <div class="step" data-x="12000">
+        <p>That's a BINGO!</p>
+        <img src="images/bingo.gif" style="width: 100%;" alt="">
+      </div>
+
+      <div class="step" data-x="13000">
+        <p><i class="ion-arrow-swap"></i> Two Data Binding</p>
+      </div>
+
+      <div class="step" data-x="14000">
+        <p><i class="ion-cube"></i> Scope & Angular Directives</p>
+      </div>
+
+      <div class="step" data-x="15000">
+        <xmp class="prettyprint" id="htmlXmp">
+          <!DOCTYPE html>
+          <html lang="en" ng-app>
+            <head></head>
+            <body></body>
+          </html>
+        </xmp>
+      </div>
+
+      <div class="step" data-x="16000">
+        <xmp class="prettyprint" id="htmlXmp">
+          <!DOCTYPE html>
+          <html lang="en" ng-app>
+            <head></head>
+            <body>
+              <!-- Parent Scope -->
+              <main ng-controller="ExamplesCtrl">
+                <!-- Child scope here ;) -->
+              </main>
+            </body>
+          </html>
+        </xmp>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('todoApp.controllers', [])
+              .controller('ExamplesCtrl', ['$scope', '$rootScope'
+              , function($scope, $rootScope){
+
+                $rootScope.myTitle = 'Title outside';
+                $scope.myTitle = 'Awesome Title.... put your title here!';
+
+              }]);
+        </pre>
+      </div>
+
+      <div class="step slide" data-x="17000">
+        <iframe src="http://localhost:9000/#/examples/02" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+
+      <div class="step slide" data-x="18000">
+        <h1>Algumas diretivas do Angular</h1>
+        <ul class="list">
+          <li>ngShow</li>
+          <li>ngIf</li>
+          <li>ngClick</li>
+          <li>ngKeydown</li>
+        </ul>
+        <br><br>
+        <div class="info">
+          Mais: <a href="https://docs.angularjs.org/api/">https://docs.angularjs.org/api/</a>
+        </div>
+      </div>
+
+      <div class="step" data-x="19000">
+        <h1><i class="ion-compass"></i> ngView and Routes</h1>
+      </div>
+
+
+      <div class="step" data-x="20000">
+        <h1>Diretiva ng-view</h1>
+        <xmp class="prettyprint" id="htmlXmp">
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head></head>
+  <body>
+    <main>
+      <ng-view></ng-view> <!-- Seu Conteúdo será carregado aqui... -->
+    </main>
+  </body>
+</html>
+        </xmp>
+      </div>
+
+      <div class="step" data-x="21000">
+        <h1><i class="ion-cube"></i> Modules</h1>
+      </div>
+
+      <div class="step" data-x="22000">
+        <h1>Declaração de módulo</h1>
+        <pre class="prettyprint lang-js">
+
+          /*
+          * Without dependencies
+          */
+          angular.module('app', []);
+
+          /*
+          * Get only reference of module for registering
+          * controllers, filters, factories, etc...
+          */
+          angular.module('app');
+
+          /*
+          * Or...
+          */
+
+          var app = angular.module('app', []);
+
+        </pre>
+      </div>
+
+      <div class="step" data-x="23000">
+        <h1><i class="ion-code"></i> Routing & Dependency Injection</h1>
+      </div>
+
+      <div class="step" data-x="24000">
+        <h1>$routeProvider</h1>
+        <small>index.html</small>
+        <xmp class="prettyprint" id="htmlXmp">
+          <body>
+            <!-- html code -->
+            <!-- include de ngRoute lib -->
+            <script src="bower_components/angular-route/angular-route.js"></script>
+          </body>
+        </xmp>
+        <small>app/scripts/app.js</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app', ['ngRoute']);
+        </pre>
+      </div>
+
+      <div class="step" data-x="25000">
+        <h1><i class="ion-gear-b"></i> Module Config & Dependency Injection</h1>
+      </div>
+
+      <div class="step" data-x="26000">
+        <small>Configurando</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app', ['ngRoute'])
+            .config(function() {
+              //configuration here
+            });
+        </pre>
+        <small>Dependency Injection</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app', ['ngRoute'])
+            .config(['$routeProvider', function($routeProvider) {
+
+              // Now you can use routeProvider! Make your routes!
+
+            }]);
+        </pre>
+      </div>
+
+      <div class="step" data-x="27000">
+        <small>Configurando nossas rotas...</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app', ['ngRoute', 'app.controllers', 'app.directives'])
+            .config(['$provide', '$routeProvider'
+              , function ($provide, $routeProvider) {
+
+              $routeProvider
+                .when('/', {
+                  redirectTo: '/tasks'
+                })
+                .when('/tasks', {
+                  templateUrl: 'views/tasks.html',
+                  controller: 'TasksCtrl'
+                })
+                .otherwise({
+                  redirectTo: '/'
+                });
+            }]);
+        </pre>
+      </div>
+
+      <div class="step" data-x="28000">
+        <p><i class="ion-link"></i> Controllers</p>
+        <small>Conexão dos models com a view</small>
+      </div>
+
+      <div class="step" data-x="29000">
+        <small>Criando o controller (controllers.js)</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app.controllers', [])
+            .controller('ExamplesCtrl', [function () {
+              // Model and View Bindings
+              $scope.myTitle = 'Awesome title...'
+              // Small Helper function not needed anywhere else
+              $scope.alertUser = function () {
+                alert('Hey!')
+              };
+            }]);
+        </pre>
+        <small>Injetando modulo de controller (app.js)</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app', ['ngRoute', 'app.controllers'])
+        </pre>
+      </div>
+
+      <div class="step" data-x="30000">
+        <h1>Adicionando diretiva ng-click</h1>
+<xmp class="prettyprint" id="htmlXmp">
+  <main ng-controller="ExamplesCtrl">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="myTitle">
+    </div>
+    <div class="form-actions">
+      <a ng-click="alertUser()" class="btn btn-primary btn-block">Click Me!</a>
+    </div>
+  </main>
+</xmp>
+      </div>
+
+      <div class="step" data-x="31000">
+        <h1>Criando o método alertUser</h1>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app.controllers', [])
+            .controller('ExamplesCtrl', [function () {
+              // Model and View Bindings
+              $scope.myTitle = 'Awesome title...'
+              // Small Helper function not needed anywhere else
+              $scope.alertUser = function () {
+                alert('Hey!')
+              };
+            }]);
+        </pre>
+      </div>
+
+      <div class="step slide" data-x="32000">
+        <iframe src="http://localhost:9000/#/examples/05" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+
+      <div class="step" data-x="33000">
+        <p><i class="ion-alert-circled"></i> LEMBRE-SE:<br/> <strong>Um bom controller deve ter o mínimo de lógica possível.</strong></p>
+        <img src="images/hitler.gif" style="width: 100%;" alt="">
+      </div>
+
+      <div class="step" data-x="34000">
+        <p><i class="ion-settings"></i> Factories</p>
+        <small>Share data with your controller</small>
+      </div>
+
+      <div class="step" data-x="35000">
+        <small>Listando nossas Tasks</small>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app.services', [])
+            .factory('TasksFactory', ['$http', '$q', function($http, $q){
+
+              var exports = {};
+              exports.tasks = [];
+
+              exports.getTasks = function () {
+                var deferred = $q.defer();
+
+                $http.get('scripts/tasks-demo.json')
+                  .success(function (data) {
+                    exports.tasks = data;
+                    deferred.resolve(data);
+                  })
+                  .error(function (data){
+                    deferred.reject(data);
+                  });
+
+                return deferred.promise;
+              };
+              return exports;
+            }]);
+        </pre>
+      </div>
+
+      <div class="step" data-x="36000">
+        <h1>Injetando app.services (app.js)</h1>
+        <pre class="prettyprint lang-js">
+          angular
+            .module('app', ['ngRoute', 'app.services', 'app.controllers']);
+        </pre>
+      </div>
+
+      <div class="step" data-x="37000">
+        <h1>Injetando TaskFactory em nosso ExamplesCtrl</h1>
+        <pre class="prettyprint lang-js">
+          app.controller('ExamplesCtrl', ['$scope', 'TasksFactory'
+          , function($scope, TasksFactory){
+
+            //....
+
+            TasksFactory.getTasks()
+              .then(function () {
+                $scope.tasks = TasksFactory.tasks;
+              });
+
+          }]);
+        </pre>
+      </div>
+
+      <div class="step" data-x="38000">
+        <h1>View</h1>
+<xmp class="prettyprint" id="htmlXmp">
+  <main ng-controller="ExamplesCtrl">
+    <div class="form-group">
+      <input type="text"
+             class="form-control"
+             placeholder="Search..."
+             ng-model="search">
+    </div>
+    <ul>
+      <li ng-repeat="task in tasks | filter:search">
+        {{task.title}}
+      </li>
+    </ul>
+  </main>
+</xmp>
+      </div>
+
+      <div class="step slide" data-x="39000">
+        <iframe src="http://localhost:9000/#/examples/06" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+
+      <div class="step" data-x="40000">
+        <i class="ion-ionic"></i> Diretivas
+      </div>
+
+      <div class="step" data-x="41000">
+        <h1>Tipos de Diretiva:</h1>
+<xmp class="prettyprint" id="htmlXmp">
+  <!-- Elemento = E -->
+  <my-element></my-element>
+
+  <!-- Elemento = A -->
+  <div my-element></div>
+
+  <!-- Elemento = A -->
+  <div data-my-element></div>
+
+  <!-- Elemento = C -->
+  <div class="my-element"></div>
+
+</xmp>
+      </div>
+
+      <div class="step" data-x="42000">
+        <h1>Diretiva declaração</h1>
+        <pre class="prettyprint lang-js">
+          app.directive('myElement', [function(){
+          // Runs during compile
+          return {
+            restrict: 'EA',
+            templateUrl: '/path/to/some.html',
+            replace: true,
+            scope: {}, // {} = isolate, true = child, false/undefined = no change
+            controller: function($scope, $element, $attrs, $transclude) {
+              //your logic
+            },
+            link: function($scope, iElm, iAttrs, controller) {
+              //jquery and plugins here
+            }
+          };
+        }]);
+        </pre>
+      </div>
+
+      <div class="step" data-x="43000">
+        <h1>Diretiva real</h1>
+        <pre class="prettyprint lang-js">
+          app.directive('navPills', ['$location', function($location){
+            return {
+              restrict: 'E',
+              templateUrl: 'views/includes/navpills.html',
+              link: function($scope, iElm, iAttrs, controller) {
+
+                var route = $location.$$url;
+
+                iElm
+                  .find('a[ng-href="#'+route+'"]')
+                  .parent()
+                  .addClass('active');
+
+                iElm
+                  .find('a')
+                  .on('click', function (e) {
+                    iElm.find('li').removeClass('active');
+                    $(e.target).parent().addClass('active');
+                  });
+
+              }
+            };
+          }]);
+        </pre>
+      </div>
+
+      <div class="step slide" data-x="44000">
+        <iframe src="http://localhost:9000/#/examples/07" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+
+      <div class="step slide" data-y="-1000" data-x="44000">
+        <h1>Links Interessantes</h1>
+        <ul class="list">
+          <li><a href="http://angular-ui.github.io/">AngularUI</a></li>
+          <li><a href="http://ionicframework.com/">Ionic Framework</a></li>
+          <li><a href="http://angularjs.org/docs">Angular Docs</a></li>
+          <li><a href="http://ngmodules.org">NgModules</a></li>
+        </ul>
+      </div>
+
+      <div class="step" data-y="-1000" data-x="45000">
+        <h1>Dúvidas?</h1>
+      </div>
+
+      <div class="step" data-y="-1000" data-x="46000">
+        <img src="images/palmas.gif" style="width:100%" alt="">
+      </div>
+
+      <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+      </div>
+
+    </div>
+
+  <div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+  </div>
+
+  <script>
+    if ("ontouchstart" in document.documentElement) {
+      document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+    }
+  </script>
+
+  <script src="js/impress.js"></script>
+  <script src="js/google-code-prettify/prettify.js"></script>
+  <script>
+    impress().init();
+    prettyPrint();
+  </script>
+
+</body>
+</html>
+
