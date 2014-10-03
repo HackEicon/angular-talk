@@ -10,16 +10,16 @@ python -m SimpleHTTPServer 4000
 Pronto! a talk estará rodando na porta 4000;
 
 #Links:
-Docs:
+####Docs:
 * [Angular Docs](https://angularjs.org/docs)
 * [Ng Book](https://www.ng-book.com/)
-UI
+####UI
 * [AngularUi](http://angular-ui.github.io)
 * [Bootstrap](http://getbootstrap.com)
 * [Zurb Foundation](http://http://foundation.zurb.com/)
-Mobile
+####Mobile
 * [Ionic Framework](http://ionicframework.com)
-Angular Modules
+####Angular Modules
 * [NgModules](http://ngmodules.org)
 
 
